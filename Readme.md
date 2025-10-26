@@ -18,10 +18,10 @@ Automate your inbox with **n8n workflows** that detect and move **promotional** 
 
 ## 📂 Folder Structure
 
-n8n-email-filters/
-├─ promotional_emails.json
-├─ spam_emails.json
-└─ README.md
+n8n_workflow/
+├─ Readme.md
+├─ workflow1.json
+└─ workflow2.json
 
 ---
 
