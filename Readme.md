@@ -17,19 +17,20 @@ Automate your inbox with **n8n workflows** that detect and move **promotional** 
 ---
 
 ## 📂 Folder Structure
-'''
+```javascript
 n8n_workflow/
 ├─ Readme.md
 ├─ workflow1.json
 └─ workflow2.json
-'''
+
+```
 ---
 
 ## ⚡ How to Use
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/n8n-email-filters.git
+git clone https://github.com/jyrjanon/n8n-email-filters.git
 Import workflows in n8n via Import → From File.
 
 Configure your email credentials in n8n (SMTP/IMAP).
