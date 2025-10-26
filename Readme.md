@@ -17,12 +17,12 @@ Automate your inbox with **n8n workflows** that detect and move **promotional** 
 ---
 
 ## 📂 Folder Structure
-
+'''
 n8n_workflow/
 ├─ Readme.md
 ├─ workflow1.json
 └─ workflow2.json
-
+'''
 ---
 
 ## ⚡ How to Use
