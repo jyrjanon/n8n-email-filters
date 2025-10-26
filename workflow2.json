@@ -1,0 +1,116 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2b8f2a88-6064-4e8f-9ccd-1396ef014973",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1qnrKaiuZNk-ZhkpUU1lHFpDm0W39TYWC5oIhBwPbP2o",
+          "mode": "list",
+          "cachedResultName": "n8n workflow",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1qnrKaiuZNk-ZhkpUU1lHFpDm0W39TYWC5oIhBwPbP2o/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1qnrKaiuZNk-ZhkpUU1lHFpDm0W39TYWC5oIhBwPbP2o/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "6f1fb8d8-e036-4f48-8be2-2013f36b5cf8",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "EJBYyn3otBaT6n9w",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "title": "Daily Email Cleanup Summary",
+        "body": "=Your workflow moved {{ $items().length }} emails to the trash in the last 24 hours."
+      },
+      "type": "n8n-nodes-base.pushbullet",
+      "typeVersion": 1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "98d9f363-10db-4178-8b55-c5aae0fba806",
+      "name": "Create a push",
+      "credentials": {
+        "pushbulletOAuth2Api": {
+          "id": "cwbY593SSdXcPesz",
+          "name": "Pushbullet account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Create a push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "fb0ffe41-6421-4259-85fb-256be2a73045",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c0fa56dbdd8f000d54fac1f1dd9ea53cdc9a512b8926f634f15ddbf62f9fcd05"
+  },
+  "id": "lxqidlO05TME9XDE",
+  "tags": []
+}
